@@ -223,3 +223,9 @@ variable "performance_insights_enabled" {
   default     = false
   description = "Whether to enable Performance Insights"
 }
+
+variable "database_name" {
+  type        = "string"
+  description = "Name given to DB"
+  default     = ""
+}
