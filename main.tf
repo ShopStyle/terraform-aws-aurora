@@ -56,6 +56,8 @@
   *   cw_sns_topic                    = "${aws_sns_topic.db_alarms_56.id}"
   *   db_parameter_group_name         = "${aws_db_parameter_group.aurora_db_56_parameter_group.id}"
   *   db_cluster_parameter_group_name = "${aws_rds_cluster_parameter_group.aurora_cluster_56_parameter_group.id}"
+  *
+  *   iam_database_authentication_enabled = "true"
   * }
   * 
   * resource "aws_db_parameter_group" "aurora_db_56_parameter_group" {
@@ -100,6 +102,8 @@
   *   cw_sns_topic                    = "${aws_sns_topic.db_alarms.id}"
   *   db_parameter_group_name         = "${aws_db_parameter_group.aurora_db_57_parameter_group.id}"
   *   db_cluster_parameter_group_name = "${aws_rds_cluster_parameter_group.aurora_57_cluster_parameter_group.id}"
+  *
+  *   iam_database_authentication_enabled = "true"
   * }
   * 
   * resource "aws_db_parameter_group" "aurora_db_57_parameter_group" {
@@ -144,6 +148,8 @@
   *   cw_sns_topic                    = "${aws_sns_topic.db_alarms_postgres96.id}"
   *   db_parameter_group_name         = "${aws_db_parameter_group.aurora_db_postgres96_parameter_group.id}"
   *   db_cluster_parameter_group_name = "${aws_rds_cluster_parameter_group.aurora_cluster_postgres96_parameter_group.id}"
+  *
+  *   iam_database_authentication_enabled = "true"
   * }
   *
   * resource "aws_db_parameter_group" "aurora_db_postgres96_parameter_group" {
@@ -244,6 +250,8 @@ resource "aws_rds_cluster" "default" {
   storage_encrypted               = "${var.storage_encrypted}"
   apply_immediately               = "${var.apply_immediately}"
   db_cluster_parameter_group_name = "${var.db_cluster_parameter_group_name}"
+
+  iam_database_authentication_enabled = "${var.iam_database_authentication_enabled}"
 }
 
 // Geneate an ID when an environment is initialised

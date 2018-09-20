@@ -229,3 +229,9 @@ variable "database_name" {
   description = "Name given to DB"
   default     = ""
 }
+
+variable "iam_database_authentication_enabled" {
+  type        = "string"
+  default     = "false"
+  description = "Determines whether IAM authentication is enabled for the cluster"
+}
